@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://pong-player-pad.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 121.33 )
+
+[node name="player" type="Node2D" index="0"]
+
+position = Vector2( 0, -1 )
+script = ExtResource( 1 )
+speed = 10
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+scale = Vector2( 1, 0.82371 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="pong-player-pad" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+
