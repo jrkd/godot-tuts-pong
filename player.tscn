@@ -13,6 +13,8 @@ extents = Vector2( 10, 121.33 )
 position = Vector2( 0, -1 )
 script = ExtResource( 1 )
 speed = 10
+UP_INPUT_ACTION = "player1-up"
+DOWN_INPUT_ACTION = "player1-down"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 

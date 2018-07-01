@@ -58,13 +58,15 @@ size_flags_vertical = 1
 
 [node name="player1" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 114.18, 242.092 )
-speed = 100
+position = Vector2( 78.8103, 273.381 )
+speed = 500
 
 [node name="player2" parent="." index="1" instance=ExtResource( 1 )]
 
-position = Vector2( 879.18, 259.092 )
-speed = 1000
+position = Vector2( 951.28, 278.498 )
+speed = 500
+UP_INPUT_ACTION = "player2-up"
+DOWN_INPUT_ACTION = "player2-down"
 
 [node name="game-bounds" type="Node2D" parent="." index="2"]
 
@@ -159,7 +161,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="pong-block" type="RigidBody2D" parent="." index="3"]
 
 editor/display_folded = true
-position = Vector2( 431.146, 452.547 )
+position = Vector2( 507.327, 280.779 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -190,6 +192,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="pong-block-collision-shape" type="CollisionShape2D" parent="pong-block" index="1"]
 
+visible = false
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -266,8 +269,8 @@ _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "custom_c
 
 [connection signal="mouse_entered" from="pong-block" to="pong-block" method="_on_blockRigidBody2D_mouse_entered"]
 
-[connection signal="outOfBoundsLeft" from="pong-block" to="game-over-panel/player-1-wins" method="show"]
+[connection signal="outOfBoundsLeft" from="pong-block" to="game-over-panel/player-2-wins" method="show"]
 
-[connection signal="outOfBoundsRight" from="pong-block" to="game-over-panel/player-2-wins" method="show"]
+[connection signal="outOfBoundsRight" from="pong-block" to="game-over-panel/player-1-wins" method="show"]
 
 
