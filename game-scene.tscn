@@ -61,6 +61,7 @@ size_flags_vertical = 1
 
 [node name="gameplay-screen" type="Panel" parent="." index="0"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -178,7 +179,6 @@ DOWN_INPUT_ACTION = "player2-down"
 
 [node name="pong-block" type="RigidBody2D" parent="gameplay-screen" index="3"]
 
-editor/display_folded = true
 position = Vector2( 507.327, 280.779 )
 input_pickable = false
 collision_layer = 1
@@ -379,11 +379,11 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect", "Theme", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[connection signal="start_gameplay" from="gameplay-screen" to="gameplay-screen/pong-block" method="start"]
+[connection signal="start_gameplay" from="gameplay-screen" to="gameplay-screen/player1" method="start"]
 
 [connection signal="start_gameplay" from="gameplay-screen" to="gameplay-screen/player2" method="start"]
 
-[connection signal="start_gameplay" from="gameplay-screen" to="gameplay-screen/player1" method="start"]
+[connection signal="start_gameplay" from="gameplay-screen" to="gameplay-screen/pong-block" method="start"]
 
 [connection signal="visibility_changed" from="gameplay-screen" to="gameplay-screen" method="_on_gameplayscreen_visibility_changed"]
 
@@ -402,6 +402,10 @@ _sections_unfolded = [ "Margin", "Rect", "Theme", "custom_colors", "custom_fonts
 [connection signal="pressed" from="gameover-screen/restart-button" to="gameplay-screen" method="show"]
 
 [connection signal="pressed" from="gameover-screen/restart-button" to="gameover-screen" method="hide"]
+
+[connection signal="pressed" from="gameover-screen/restart-button" to="gameover-screen/player-1-wins" method="hide"]
+
+[connection signal="pressed" from="gameover-screen/restart-button" to="gameover-screen/player-2-wins" method="hide"]
 
 [connection signal="pressed" from="start-screen/start-button" to="start-screen" method="hide"]
 
